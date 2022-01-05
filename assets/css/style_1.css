@@ -1,0 +1,214 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #89e9c2;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+#bodymovin {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  text-align: center;
+  opacity: 1;
+}
+
+#btn-on {
+  transition: opacity 0.4s ease 0.1s, color 0.2s, transform 0.2s;
+  opacity: 1;
+  border: none;
+  background: none;
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#btn-on:focus {
+  outline: none;
+  transform: scale(1.1);
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modal__content {
+  opacity: 1;
+  transform: scale(1) translate3D(0, 0, 0);
+  transition: opacity 0.2s, transform 0.8s cubic-bezier(0.09, 0.52, 0.25, 1);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+}
+.modal h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 3em;
+}
+.modal p,
+.modal a {
+  margin-top: 2rem;
+  max-width: 30em;
+  line-height: 1.9;
+  font-size: 1.3em;
+
+  color: #333;
+}
+
+/* Switch starts here */
+.rocker {
+  display: inline-block;
+  position: relative;
+
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #888;
+  width: 7em;
+  height: 4em;
+  overflow: hidden;
+  border-bottom: 0.5em solid #eee;
+}
+
+.rocker::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #999;
+  border: 0.5em solid #eee;
+  border-bottom: 0;
+}
+
+.rocker input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-right,
+.switch-left {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 3em;
+  transition: 0.2s;
+}
+
+.switch-right {
+  height: 2.4em;
+  width: 2.75em;
+  left: 0.85em;
+  bottom: 0.4em;
+  background-color: #ddd;
+  transform: rotate(15deg) skewX(15deg);
+}
+
+.switch-left {
+  right: 0.5em;
+  bottom: 0;
+  background-color: #0084d0;
+  color: #fff;
+}
+
+.switch-right::before,
+.switch-left::before {
+  content: "";
+  position: absolute;
+  width: 0.4em;
+  height: 2.45em;
+  bottom: -0.45em;
+  background-color: #ccc;
+  transform: skewY(-65deg);
+}
+
+.switch-right::before {
+  left: -0.4em;
+}
+
+.switch-left::before {
+  right: -0.375em;
+  background-color: transparent;
+  transform: skewY(65deg);
+}
+
+input.on + .switch-right {
+  background-color: #bd5757;
+  color: #fff;
+  bottom: 0px;
+  left: 0.5em;
+  height: 2.5em;
+  width: 3em;
+  transform: rotate(0deg) skewX(0deg);
+}
+
+input.on + .switch-right::before {
+  background-color: transparent;
+  width: 3.0833em;
+}
+
+input.on + .switch-right + .switch-left {
+  background-color: #ddd;
+  color: #888;
+  bottom: 0.4em;
+  right: 0.8em;
+  height: 2.4em;
+  width: 2.75em;
+  transform: rotate(-15deg) skewX(-15deg);
+}
+
+input.on + .switch-right + .switch-left::before {
+  background-color: #ccc;
+}
+
+input.on + .switch-right {
+  color: #333;
+}
+
+input.on + .switch-right {
+  color: #fff;
+}
+
+input.on + .switch-right + .switch-left {
+  color: #fff;
+}
+
+input.on + .switch-right + .switch-left {
+  color: #333;
+}
+
+.modal__content.on {
+  opacity: 0;
+  transform: scale(0.8) translate3D(0, -20px, 0);
+}

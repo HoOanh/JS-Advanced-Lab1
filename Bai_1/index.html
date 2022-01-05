@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS nâng cao | lab 1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: linear-gradient(130deg, #c9ffbf, #ffafbd);
+      }
+      #target {
+        width: 200px;
+        height: 200px;
+        background: #33691e;
+
+        box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      #target h3 {
+        margin-top: calc(50% - 20px);
+        line-height: 20px;
+        text-align: center;
+        color: #ffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="target">
+      <h3>Ready</h3>
+    </div>
+
+    <script>
+      let target = document.querySelector("#target");
+
+      target.addEventListener("mouseover", () => {
+        target.innerHTML = "<h3>Mouseover</h3>";
+        target.style.background = "#BF360C";
+        console.log("a");
+      });
+
+      target.addEventListener("mouseout", () => {
+        target.innerHTML = "<h3>Mouseout</h3>";
+        target.style.background = "#33691E";
+        console.log("b");
+      });
+    </script>
+  </body>
+</html>
