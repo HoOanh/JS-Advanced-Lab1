@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style_6.css" />
+    <!-- <link rel="stylesheet" href="../../assets/css/style_3.css" /> -->
+    <title>Lab 1 | Lesson 6</title>
+  </head>
+  <body>
+    <a class="back" href="../../">Back to home</a>
+    <div class="tasks">
+      <h1>Đố bạn ngày này là thứ mấy</h1>
+      <!-- title -->
+      <div class="form">
+        <div class="form-control">
+          <input
+            type="number"
+            id="date"
+            required
+            maxlength="2"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          />
+          <label>Date</label>
+        </div>
+        <div class="form-control">
+          <input
+            type="number"
+            id="month"
+            required
+            maxlength="2"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          />
+          <label>Month</label>
+        </div>
+        <div class="form-control">
+          <input
+            type="number"
+            id="year"
+            required
+            maxlength="4"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          />
+          <label>Year</label>
+        </div>
+        <button type="submit" class="floating-btn" id="submit">
+          Đoán nào đoán nào
+        </button>
+      </div>
+    </div>
+    <script src="../../assets/js/mainJS6.js"></script>
+  </body>
+</html>
